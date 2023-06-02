@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import {BsCodeSquare,BsInstagram,BsLinkedin,BsGithub} from 'react-icons/bs'
 import {RiMenu3Fill} from 'react-icons/ri'
 import { motion} from 'framer-motion';
+import {Link} from 'react-router-dom'
 
 
 
-const Navbar = ({sectionRef}) => {
+const Navbar = ({ scrollToProjects, scrollToContact }) => {
     
     const [active, setActive] = useState(false)
 
@@ -24,9 +25,7 @@ const Navbar = ({sectionRef}) => {
         };
       }, []);
 
-      const scrollToProjects = () => {
-        sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-      };
+  
   return (
     <Wrapper>
         <Logo />
@@ -35,7 +34,7 @@ const Navbar = ({sectionRef}) => {
                 <ul>
                     <li>HOME</li>
                     <li onClick={scrollToProjects} >PROJECTS</li>
-                    <li>CONTACT</li>
+                    <li onClick={scrollToContact}>CONATACT</li>
                 </ul>
             </NavWrap>
             <Social>
@@ -57,6 +56,9 @@ const Navbar = ({sectionRef}) => {
                 <li>HOME</li>
                 <li>PROJECTS</li>
                 <li>CONTACT</li>
+                <li><BsInstagram size={52} /></li>
+                <li><BsLinkedin size={52} /></li>
+                <li><BsGithub size={52} /></li>
             </ul>
         </NavMobile>: ''}
     </Wrapper>
@@ -157,7 +159,8 @@ const Hamburger = styled(RiMenu3Fill)`
     }
 `
 const NavMobile = styled(motion.div)`
-    padding: 2rem 1rem;
+    z-index:30;
+    padding: 1rem 1rem;
     position:absolute;
     top:8rem;
     right:2rem;
@@ -180,10 +183,12 @@ const NavMobile = styled(motion.div)`
         font-weight:600;
         cursor:pointer;
         color:#0C2D48;
+        margin-bottom: 1rem;
         &:hover{
             color:#2E8BC0;
             transition: 0.1s ease;
         }
+        
     }
 `
 const Btn = styled.button`
