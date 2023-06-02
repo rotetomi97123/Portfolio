@@ -32,7 +32,6 @@ const HomePage = () => {
         <Video autoPlay loop muted>
           <source src={background2} type="video/mp4" />
         </Video>
-        <Arrow />
       </Wrapper>
       <Skills />
       <Projects  sectionRef={projectsRef} />
