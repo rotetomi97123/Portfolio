@@ -34,14 +34,13 @@ const Navbar = ({ scrollToProjects, scrollToContact }) => {
                 <ul>
                     <li>HOME</li>
                     <li onClick={scrollToProjects} >PROJECTS</li>
-                    <li onClick={scrollToContact}>CONATACT</li>
+                    <li onClick={scrollToContact}>CONTACT</li>
                 </ul>
             </NavWrap>
             <Social>
-                    <li><BsInstagram /></li>
-                    <li><BsLinkedin /></li>
-                    <li><BsGithub /></li>
-                    <Btn>CV</Btn>
+                    <Link to='https://www.instagram.com/tot.tamas04/?igshid=MzNlNGNkZWQ4Mg%3D%3D&fbclid=IwAR0MfXe_Y3grK2HP1aVD9ZDYv8NFWNeemkNkrlv3fSwq-3vMo34lKXaD3XA'><li><BsInstagram /></li></Link>
+                    <Link to='https://www.linkedin.com/in/tam%C3%A1s-t%C3%B3th-179897254?fbclid=IwAR0b_mkxRnwvBRZZO69xccAuE9KkPcbFfFKbmC_YZrJhDCf-mS_wS5Vr-RQ&original_referer=https%3A%2F%2Fl.facebook.com%2F'><li><BsLinkedin /></li></Link>
+                    <Link to='https://github.com/rotetomi97123'><li><BsGithub /></li></Link>
             </Social>
         </span>
         <Hamburger onClick={()=>(setActive(!active))}/>
@@ -56,9 +55,9 @@ const Navbar = ({ scrollToProjects, scrollToContact }) => {
                 <li>HOME</li>
                 <li>PROJECTS</li>
                 <li>CONTACT</li>
-                <li><BsInstagram size={52} /></li>
-                <li><BsLinkedin size={52} /></li>
-                <li><BsGithub size={52} /></li>
+                <Link to='https://www.instagram.com/tot.tamas04/?igshid=MzNlNGNkZWQ4Mg%3D%3D&fbclid=IwAR0MfXe_Y3grK2HP1aVD9ZDYv8NFWNeemkNkrlv3fSwq-3vMo34lKXaD3XA'><li><BsInstagram /></li></Link>
+                <Link to='https://www.linkedin.com/in/tam%C3%A1s-t%C3%B3th-179897254?fbclid=IwAR0b_mkxRnwvBRZZO69xccAuE9KkPcbFfFKbmC_YZrJhDCf-mS_wS5Vr-RQ&original_referer=https%3A%2F%2Fl.facebook.com%2F'><li><BsLinkedin /></li></Link>
+                <Link to='https://github.com/rotetomi97123'><li><BsGithub /></li></Link>
             </ul>
         </NavMobile>: ''}
     </Wrapper>
@@ -119,6 +118,10 @@ const Social = styled.ul`
         font-weight:600;
         cursor:pointer;
         color:#0C2D48;
+        a{
+            list-style-type:none;
+            text-decoration:none;
+        }
         &:hover{
             color:#2E8BC0;
             transition: 0.1s ease;
@@ -191,25 +194,5 @@ const NavMobile = styled(motion.div)`
         
     }
 `
-const Btn = styled.button`
-    font-size: 1.5rem;
-    background: none;
-    border-radius:1rem;
-    border: 2px solid #0C2D48;
-    color: #0C2D48;
-    padding: 0 1rem;
-    font-weight: 600;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor: pointer;
-    margin-left: 2rem;
-    &:hover{
-        color:#2E8BC0;
-        transition: 0.1s ease;
-        border: 2px solid #2E8BC0;
-
-    }
-    `
 
 export default Navbar

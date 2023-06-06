@@ -82,5 +82,10 @@ const Btn = styled.button`
   @media (max-width: 800px){
     width:70%;
   }
+  transition: transform 0.3s ease, translateY 0.3s ease;
+    transform-origin: center center;
+    &:hover {
+        transform: scale(1.05);
+    }
 `
 export default Contact

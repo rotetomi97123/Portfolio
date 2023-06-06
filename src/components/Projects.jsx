@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const Projects = ({ sectionRef }) => {
   return (
     <Wrapper ref={sectionRef} >
-        <h1>Projects</h1>
+         <h1>{'<Projects />'}</h1>
         <Box>
             <ImageDiv></ImageDiv>
             <TextDiv>
@@ -80,6 +80,9 @@ const Box = styled.div`
         height: 100vh;
         justify-content:center;
         align-items:center;
+    }
+    @media (max-width: 600px){
+        height:100%;
     }
     `
     const ImageDiv = styled.div`

@@ -1,34 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {Experience} from './data'
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.2 });
 
-    useEffect(() => {
-    if (inView) {
-        controls.start('visible');
-    }
-    }, [controls, inView]);
-
-    const fadeIn = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } }
-      };
+  
   return (
-    <Wrapper ref={ref}>
-        <h1>Experience</h1>
+    <Wrapper >
+        <h1>{'<Experience />'}</h1>
         <span>
             {Experience.map((item,index)=>{
                 return(
-                    <Box 
-                       
-                        
-                        >
+                    <Box>
                             <img src={item.img} alt={item.id}/>
+                            <Bg>{item.name}</Bg>
                     </Box>
                 )
                 })}
@@ -59,6 +45,7 @@ const Wrapper = styled.div`
     
 `
 const Box = styled(motion.div)`
+    position: relative;
     width: 250px;
     height: 250px;
     display:flex;
@@ -75,5 +62,29 @@ const Box = styled(motion.div)`
     &:hover {
         transform: scale(1.05) translateY(-5px);
     }
+`
+const Bg = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 1rem;
+    border:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    &:hover{
+        opacity:1;
+        transition: 0.3s ease;
+    }
+    
 `
 export default Skills
