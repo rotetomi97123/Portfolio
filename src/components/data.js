@@ -32,7 +32,7 @@ export const Experience = [
     {
         id:7,
         name: 'STYLED-COMPONENTS',
-        img: 'https://www.daggala.com/static/228867c3668e439101821568a8a03b54/19ca5/sc.png'
+        img: 'https://miro.medium.com/v2/resize:fit:318/1*7jRD5QhgARucFKvRHFxpOg.png'
     },
     {
         id:8,

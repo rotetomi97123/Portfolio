@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import kep1 from '../assets/kep1.png'
 import kep2 from '../assets/kep2.png'
 import kep3 from '../assets/kep3.png'
+import kep4 from '../assets/kep4.png'
 import { BsGithub } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
@@ -10,6 +11,21 @@ const Projects = ({ sectionRef }) => {
   return (
     <Wrapper ref={sectionRef} >
          <h1>{'<Projects />'}</h1>
+         <Box>
+            <ImageDiv4></ImageDiv4>
+            <TextDiv>
+                <h2>VULKAN KNJIŽARE DEMO</h2>
+                <h4>Demo website of Knjižare Vulkan</h4>
+                <p>Built with <span>React </span>,<span>Vite</span>, <span>Styled Components</span>, <span>Framer Motion</span> ,
+                <span> React Splide </span> , and <span>React Router DOM</span>.  </p>
+                <h3>Building this project helped me to practice routing trough pages, passing props with <span>react-router-dom</span>, practice <span>responsive design</span> with <span>styled components</span>.</h3>
+                <Flex>
+                    <Link to='https://vulkan-demo.netlify.app/' target="_blank"><DemoBtn>Demo</DemoBtn></Link>
+                    <Link to='https://github.com/rotetomi97123/Vulkan-Demo.git' target="_blank"><GitBtn><BsGithub /></GitBtn></Link>
+                </Flex>
+            </TextDiv>
+            <ImageDiv5></ImageDiv5>
+        </Box>
         <Box>
             <ImageDiv></ImageDiv>
             <TextDiv>
@@ -70,7 +86,7 @@ const Wrapper = styled.div`
 `
 const Box = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     display:flex;
     margin-top:4rem;
     padding: 0rem 3rem;
@@ -104,6 +120,17 @@ const ImageDiv2 = styled.div`
     width: 50%;
     height:100%;
     background-image: url(${kep2});
+    background-size: cover;
+    @media (max-width: 1600px){
+        width: 80%;
+        height:50%;
+        display:none;
+    }
+`
+const ImageDiv5 = styled.div`
+    width: 50%;
+    height:100%;
+    background-image: url(${kep4});
     background-size: cover;
     @media (max-width: 1600px){
         width: 80%;
